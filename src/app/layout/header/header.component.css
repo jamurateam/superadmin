@@ -1,0 +1,12 @@
+.mainDivWrap{
+    float: left;
+    background-color: #80808033;;
+    width: 100%;
+}
+
+.mainDivWrap h3{
+    text-align: center;
+    font-size: 27px;
+    color: #09418b;
+    margin: 13px;
+}
