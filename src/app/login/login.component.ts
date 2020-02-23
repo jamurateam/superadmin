@@ -1,3 +1,4 @@
+import { DataService } from './../data.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -7,13 +8,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  constructor(private router: Router) { }
+  token: string
+  constructor(private apiService: DataService, public router: Router) { }
 
   ngOnInit() {
   }
 
   onLogin() {
+    console.log("call");
+    sessionStorage.setItem('token', this.token);
+    this.router.navigate(["/admitStudent"]); 
+  }
 
-}
 }

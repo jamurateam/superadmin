@@ -1,13 +1,18 @@
+import { GuardGuard } from './Guard/guard.guard';
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
+
   {
-  path: 'layout', loadChildren: './layout/layout.module#LayoutModule'
+    path: '', loadChildren: './layout/layout.module#LayoutModule', canActivate: [GuardGuard]
   },
   {
-    path: '', loadChildren: './layout/login/login.module#LoginModule'
+    path: 'login', loadChildren: './login/login.module#LoginModule'
+  },
+  {
+    path: 'registration', loadChildren: './registration/registration.module#RegistrationModule'
   }
 ];
 

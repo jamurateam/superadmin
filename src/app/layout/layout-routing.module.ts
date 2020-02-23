@@ -6,9 +6,9 @@ import { LayoutComponent } from './layout.component';
 const routes: Routes = [ 
   {path: "", component: LayoutComponent,
   children: [
-    { path: "login", loadChildren: "./login/login.module#LoginModule" },
-    { path: "registration", loadChildren: "./registration/registration.module#RegistrationModule" },
-
+    { path: "admitStudent", loadChildren: "./admit-student/admit-student.module#AdmitStudentModule" },
+    { path: "currentBatch", loadChildren: "./currentbatch/currentbatch.module#CurrentbatchModule" },
+    { path: "feeCollection", loadChildren: "./fee-collecting/fee-collecting.module#FeeCollectingModule" },
 ]
   }];
 @NgModule({

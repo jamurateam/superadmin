@@ -1,6 +1,6 @@
+import { Student } from './layout/Student';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Student } from './layout/registration/registration.module';
 
 @Injectable({
   providedIn: 'root'
@@ -15,5 +15,8 @@ export class DataService {
 }
 createUser(employee: Student) {  
   return this.httpClient.post(this.baseUrl, employee);  
+}
+isLoginId() {
+
 }
 }

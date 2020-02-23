@@ -1,0 +1,121 @@
+.mainWrap {
+    float: left;
+    overflow: hidden;
+    max-width: 100%;
+}
+.mainDiv {
+    float: left;
+    width: 100%;
+}
+.rowWrap {
+    float: left;
+    width: 50%;
+    padding: 15px;
+}
+.labelWrap {
+    float: left;
+    margin-top: 7px;
+    padding-right: 10px;
+    text-align: right;
+    width: 30%;
+}
+.inputWrap {
+    float: left;
+    width: 50%;
+}
+.buttonWrap {
+    float: left;
+    width: 100%;
+    padding-top: 10px; 
+}
+.buttonWrapMemory {
+    width: 10%;
+    margin: auto;
+}
+.buttonWrap button {
+    width: 100%;
+    float: left;
+}
+.forCardWrap {
+    float: left;
+    width: 100%;
+}
+.cardWrap {
+    float: left;
+    width: 32%;
+    border: 1px solid #dcdcdc8f;
+    margin-top: 10px;
+    border-radius: 3px;
+    padding: 5px;
+    background-color: #dcdcdc8f;
+}
+.nameWrap{
+    float: left;
+    padding: 2px;
+    width: 100%;
+  }
+.ServiceHeadingWrap {
+    float: left;
+    width: 100%;
+}
+.ServiceHeadingWrap h3 {
+    float: left;
+    width: 100%;
+    margin: 0px;
+}
+.AdmissionNumber{
+    float: left;
+    width: 100%;
+}
+.AdmissionNumber p{
+    float: left;
+    width: 100%;
+    margin: 0px;
+    font-size: 12px;
+}
+.CrmIdPutWrap{
+    float: left;
+    width: 50%;
+  }
+  .CrmIdPutWrap h3{
+    float: left;
+    margin: 0px;
+    font-size: 15px;
+    font-weight: 600;
+    width: 100%;
+  }
+  .CrmIdGetWrap{
+    float: left;
+    width: 50%;
+  }
+  .CrmIdGetWrap p{
+    float: left;
+    margin: 0px;
+    width: 100%;
+  }
+  .feeWrap {
+      float: left;
+      width: 100%;
+      padding: 3px;
+  }
+  .textAreaWrap {
+      float: left;
+      width: 70%;
+  }
+  .textAreaWrap p {
+      float: left;
+      
+      margin-top: 6px;
+      text-align: right;
+      width: 100%;
+      padding-right: 20px;
+  }
+  .ButtonAreaWrap {
+      float: left;
+      width: 25%;
+  }
+  .ButtonAreaWrap button {
+      float: left;
+      width: 100%;
+
+  }

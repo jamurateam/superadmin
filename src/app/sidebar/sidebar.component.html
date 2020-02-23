@@ -1,0 +1,20 @@
+<div class="sidebarwrap">
+    <ul class="listwrap">
+        <li (click)="permissionAdmin()">
+            <a>
+                <i class="fa fa-plus" aria-hidden="false"></i>Admission </a>
+        </li>
+        <div class="listWrap" *ngIf="isAdmission">
+            <ul class="listwrap">
+                <li style="padding-left: 19%!important">
+                    <a [routerLink]="[ '/admitStudent'] ">
+                        <i class="fa fa-user-o fa-lg"></i>Admit Student</a>
+                </li>
+                <li style="padding-left: 19%!important">
+                    <a [routerLink]="[ '/currentBatch'] ">
+                        <i class="fa fa-user-o fa-lg"></i>Current Batch</a>
+                </li>
+            </ul>
+        </div>
+    </ul>
+</div>
