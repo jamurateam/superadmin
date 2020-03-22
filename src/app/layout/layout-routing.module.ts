@@ -9,6 +9,9 @@ const routes: Routes = [
     { path: "admitStudent", loadChildren: "./admit-student/admit-student.module#AdmitStudentModule" },
     { path: "currentBatch", loadChildren: "./currentbatch/currentbatch.module#CurrentbatchModule" },
     { path: "feeCollection", loadChildren: "./fee-collecting/fee-collecting.module#FeeCollectingModule" },
+    { path: "feeHeads", loadChildren: "./fee-heads/fee-heads.module#FeeHeadsModule" },
+    { path: "feeDetails", loadChildren: "./fee-detail/fee-detail.module#FeeDetailModule" },
+    { path: "feePatterns", loadChildren: "./fee-pattern/fee-pattern.module#FeePatternModule" },
 ]
   }];
 @NgModule({

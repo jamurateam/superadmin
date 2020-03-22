@@ -1,6 +1,6 @@
 <div class="sidebarwrap">
     <ul class="listwrap">
-        <li (click)="permissionAdmin()">
+        <li (click)="permissionAdmin()"> 
             <a>
                 <i class="fa fa-plus" aria-hidden="false"></i>Admission </a>
         </li>
@@ -16,5 +16,13 @@
                 </li>
             </ul>
         </div>
+        <li >
+            <a [routerLink]="[ '/feeHeads'] ">
+                <i class="fa fa-user-o fa-lg"></i>Fee Heads</a>
+        </li>
+        <li >
+                <a [routerLink]="[ '/feePatterns'] ">
+                    <i class="fa fa-user-o fa-lg"></i>Fee Pattern</a>
+            </li>
     </ul>
 </div>

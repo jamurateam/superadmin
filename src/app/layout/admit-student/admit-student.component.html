@@ -6,8 +6,9 @@
                 <div class="labelWrap">
                     Application Number :
                 </div>
-                <div class="inputWrap">
-                    <input type="text" name="ApplicationNumber" class="form-control">
+                <div class="inputWrap">                    
+                    <input type="text" name="id" #id="ngModel" class="form-control"
+                    [(ngModel)]="studentData.id" >
                 </div>
             </div>
 
@@ -16,17 +17,18 @@
                    Name :
                 </div>
                 <div class="inputWrap">
-                    <input type="text" name="Name" class="form-control">
+                        <input type="text" name="student_name" #student_name="ngModel" class="form-control"
+                        [(ngModel)]="studentData.student_name" >
                 </div>
             </div>
 
             <div class="buttonWrap">
                 <div class="buttonWrapMemory">
-                <button class="btn btn-primary">Search</button>
+                <button class="btn btn-primary" (click)="onSearch()">Search</button>
             </div>
             </div>
         </div>
-    </div>
+    </div> 
 
     <div class="tableWrap">
         <div class="table-responsive">

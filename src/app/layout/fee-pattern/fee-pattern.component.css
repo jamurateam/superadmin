@@ -12,16 +12,16 @@
     width: 50%;
     padding: 15px;
 }
+.inputWrap {
+    float: left;
+    width: 50%;
+}
 .labelWrap {
     float: left;
     margin-top: 7px;
     padding-right: 10px;
     text-align: right;
     width: 30%;
-}
-.inputWrap {
-    float: left;
-    width: 50%;
 }
 
 .InformationSelectGetWrap{
@@ -36,17 +36,4 @@
     border: 1px solid #80808073;
     background-color: white;
     padding: 8px;
-}
-.buttonWrap {
-    float: left;
-    width: 100%;
-    padding-top: 10px; 
-}
-.buttonWrapMemory {
-    width: 10%;
-    margin: auto;
-}
-.buttonWrap button {
-    width: 100%;
-    float: left;
 }
