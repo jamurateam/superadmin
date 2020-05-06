@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FeePatternRoutingModule } from './fee-pattern-routing.module';
 import { FeePatternComponent } from './fee-pattern.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     FeePatternRoutingModule,
+    FormsModule,
     HttpClientModule
   ]
 })

@@ -4,12 +4,21 @@
     
                 <div class="rowWrap">
                     <div class="labelWrap">
-                        Fee Pattern Name :
+                        Class :
                     </div>
                     <div class="inputWrap">
-                        <input type="text" name="ApplicationNumber" class="form-control">
+                        <input type="text" name="fee_pattern_class_name" #fee_pattern_class_name="ngModel" [(ngModel)]="feePattern.fee_pattern_class_name" class="form-control">
                     </div>
                 </div>
+
+                <div class="rowWrap">
+                        <div class="labelWrap">
+                            Batch :
+                        </div>
+                        <div class="inputWrap">
+                            <input type="text"  name="fee_pattern_batch" #fee_pattern_batch="ngModel" [(ngModel)]="feePattern.fee_pattern_batch" class="form-control">
+                        </div>
+                    </div>
     
                 <div class="rowWrap">
                         <div class="labelWrap">
@@ -17,42 +26,24 @@
                         </div>
                         <div class="InformationSelectGetWrap">
                             <select class="browser-default custom-select" 
-                            name="nationality">
+                            name="fee_pattern_type" [(ngModel)]="feePattern.fee_pattern_type">
                                 <option>
                                     Select Category
                                 </option>
                                 <option value="General">General</option>
-                                <option value="General">SC</option>
+                                <option value="SC">SC</option>
                             </select>
                         </div>
                 </div>
 
-                <div class="rowWrap">
-                        <div class="labelWrap">
-                            Tution Fee:
-                        </div>
-                        <div class="inputWrap">
-                            <input type="text" name="ApplicationNumber" class="form-control">
-                        </div>
-                </div>
-    
-                <div class="rowWrap">
-                        <div class="labelWrap">
-                            Academic Fee:
-                        </div>
-                        <div class="inputWrap">
-                            <input type="text" name="ApplicationNumber" class="form-control">
-                        </div>
-                </div>
 
-                <div class="rowWrap">
-                        <div class="labelWrap">
-                            Hostel Fee:
-                        </div>
-                        <div class="inputWrap">
-                            <input type="text" name="ApplicationNumber" class="form-control">
-                        </div>
-                </div>
+            <div class="buttonWrap">
+                <div class="buttonWrapMemory">
+                <button class="btn btn-primary" (click)="onAdd()">Add</button>
+            </div>
+            </div>
+
+             
             </div>
         </div>
     </div>

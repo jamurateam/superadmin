@@ -1,3 +1,4 @@
+import { FeePattern } from './../../model/FeePattern';
 import { DataService } from './../../data.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,13 +9,19 @@ import { Component, OnInit } from '@angular/core';
   providers: [DataService]
 })
 export class FeePatternComponent implements OnInit {
-movies = [{title : 'test'}]
-  constructor(private api: DataService) { 
- 
-  }
+  public feePattern = {} as FeePattern;
+  constructor(private apiService : DataService) { }
 
   ngOnInit() {
-    console.log("hello");
+  }
+  onAdd() {
+    console.log(this.feePattern);
+    this.apiService.createFeePattern(this.feePattern).subscribe(data => {
+      console.log(data);
+    },
+      error => {
+        alert(error.error.text);
+      });
   }
 
 }

@@ -1,4 +1,5 @@
-import { Student } from './../Student';
+import { Student } from './../../model/Student';
+
 import { DataService } from './../../data.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -17,19 +18,16 @@ public studentData = {} as Student;
 
   onSearch() {
     if (this.studentData.id) {
-      console.log(this.studentData.id);
       this.apiService.getStudentDetailById(this.studentData.id).subscribe(data => {
-        console.log("id");
         console.log(data);
+        this.studentData = data;
       },
         error => {
           alert(error.error.text);
         });
     } else if (this.studentData.student_name) {
-      console.log(this.studentData.student_name);
-      this.apiService.getStudentDetailByName(this.studentData.student_name).subscribe(data => {
-        console.log("name");
-        console.log(data);
+      this.apiService.getStudentDetailById(this.studentData.student_name).subscribe(data => {
+        this.studentData = data;
       },
         error => {
           alert(error.error.text);

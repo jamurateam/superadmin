@@ -1,4 +1,5 @@
-import { Student } from './../layout/Student';
+import { Student } from './../model/Student';
+
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 
@@ -23,6 +24,6 @@ public student = {} as Student;
         alert(error.error.text);
       });
   }
-
+ 
 }
  

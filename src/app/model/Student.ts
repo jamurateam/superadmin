@@ -8,7 +8,7 @@ export class Student {
     student_gender: string;
     student_nationality: string;
     student_domicile: string;
-    student_blood: string;sssssssss
+    student_blood: string;
     student_email: string;
     student_parent_email: string;
     student_ph: number;

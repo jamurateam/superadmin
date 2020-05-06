@@ -10,6 +10,7 @@ const routes: Routes = [
     { path: "currentBatch", loadChildren: "./currentbatch/currentbatch.module#CurrentbatchModule" },
     { path: "feeCollection", loadChildren: "./fee-collecting/fee-collecting.module#FeeCollectingModule" },
     { path: "feeHeads", loadChildren: "./fee-heads/fee-heads.module#FeeHeadsModule" },
+    { path: "feeHeadsCollect", loadChildren: "./fee-heads-collect/fee-heads-collect.module#FeeHeadsCollectModule" },
     { path: "feeDetails", loadChildren: "./fee-detail/fee-detail.module#FeeDetailModule" },
     { path: "feePatterns", loadChildren: "./fee-pattern/fee-pattern.module#FeePatternModule" },
 ]

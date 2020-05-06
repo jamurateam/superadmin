@@ -1,0 +1,67 @@
+<div class="mainWrap">
+    <div class="container">
+        <div class="mainDiv">
+
+            <div class="rowWrap">
+                <div class="labelWrap">
+                    Application Number :
+                </div>
+                <div class="inputWrap">
+                    <input type="text" name="ApplicationNumber" class="form-control">
+                </div>
+            </div>
+
+            <div class="buttonWrap">
+                <div class="buttonWrapMemory">
+                    <button class="btn btn-primary">Search</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="forCardWrap">
+            <div class="card">
+                <div class="testHeadWrap">
+                    <div class="rowWrapCard">
+                        <div class="labelWrap">
+                            Amount Payable :
+                        </div>
+                        <div class="inputWrap">
+                            <input type="text" name="amountPayable" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="rowWrapCard">
+                            <div class="labelWrap">
+                                Payment Mode :
+                            </div>
+                            <div class="inputWrap">
+                                    <select class="browser-default custom-select"
+                                    name="category" (change)="paymentMethod($event.target.value)">
+                                        <option>
+                                            Select Category
+                                        </option>
+                                        <option value="general" value="cash" >Cash</option>
+                                        <option value="general" value="cheque">Cheque</option>
+                                    </select>
+                            </div>
+                    </div>
+
+                    <div class="rowWrapCard" *ngIf="isCheque">
+                            <div class="labelWrap">
+                               Cheque Number :
+                            </div>
+                            <div class="inputWrap">
+                                <input type="text" name="amountPayable" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="buttonWrap">
+                                <div class="buttonWrapMemory">
+                                    <button class="btn btn-primary">Collect</button>
+                                </div>
+                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

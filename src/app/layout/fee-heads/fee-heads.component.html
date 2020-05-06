@@ -3,65 +3,75 @@
         <div class="mainDiv">
 
             <div class="rowWrap">
-                <div class="labelWrap">
-                    Application Number :
-                </div>
-                <div class="inputWrap">
-                    <input type="text" name="ApplicationNumber" class="form-control">
-                </div>
+                    <div class="labelWrap">
+                        Fee Pattern Name :
+                    </div>
+                    <div class="InformationSelectGetWrap">
+                        <select class="browser-default custom-select" 
+                        name="nationality" name="fee_pattern_type" [(ngModel)]="feePatternHead.fee_pattern_name">
+                            <option>
+                                Select Fee Pattern
+                            </option>
+                            <option value="10_2020-2021_GENERAL">10_2020-2021_GENERAL</option>
+                            <option value="10_2020-2021_SC">10_2020-2021_SC</option>
+                            <option value="8_2020-2021_GENERAL">8_2020-2021_GENERAL</option>
+                        </select>
+                    </div>
             </div>
 
-            <div class="buttonWrap">
-                <div class="buttonWrapMemory">
-                    <button class="btn btn-primary">Search</button>
-                </div>
+          <div class="rowWrap">
+                    <div class="labelWrap">
+                      Total Tution Fee:
+                    </div>
+                    <div class="inputWrap">
+                        <input type="text" name="total_tution_fee" #total_tution_fee="ngModel" [(ngModel)]="feePatternHead.total_tution_fee" class="form-control">
+                    </div>
             </div>
+
+            <div class="rowWrap">
+                    <div class="labelWrap">
+                        Total Academic Fee:
+                    </div>
+                    <div class="inputWrap">
+                        <input type="text" name="total_academic_fee" #total_academic_fee="ngModel" [(ngModel)]="feePatternHead.total_academic_fee" class="form-control">
+                    </div>
+            </div>
+
+            <div class="rowWrap">
+                    <div class="labelWrap">
+                        Total Hostel Fee:
+                    </div>
+                    <div class="inputWrap">
+                        <input type="text" name="total_hostel_fee" #total_hostel_fee="ngModel" [(ngModel)]="feePatternHead.total_hostel_fee" class="form-control">
+                    </div>
+            </div>
+
+            <div class="rowWrap">
+                <div class="labelWrap">
+                    Fee Collect Pattern :
+                </div>
+                <div class="InformationSelectGetWrap">
+                    <select class="browser-default custom-select" 
+                    name="nationality" name="fee_collect_pattern" [(ngModel)]="feePatternHead.fee_collect_pattern">
+                        <option>
+                            Select
+                        </option>
+                        <option value="1">1 month</option>
+                        <option value="6">6 months</option>
+                        <option value="12">1 year</option>
+                    </select>
+                </div>
+        </div>
+         
+
+
+        <div class="buttonWrap">
+            <div class="buttonWrapMemory">
+            <button class="btn btn-primary" (click)="onAdd()">Add</button>
+        </div>
         </div>
 
-        <div class="forCardWrap">
-            <div class="card">
-                <div class="testHeadWrap">
-                    <div class="rowWrapCard">
-                        <div class="labelWrap">
-                            Amount Payable :
-                        </div>
-                        <div class="inputWrap">
-                            <input type="text" name="amountPayable" class="form-control">
-                        </div>
-                    </div>
-
-                    <div class="rowWrapCard">
-                            <div class="labelWrap">
-                                Payment Mode :
-                            </div>
-                            <div class="inputWrap">
-                                    <select class="browser-default custom-select"
-                                    name="category" (change)="paymentMethod($event.target.value)">
-                                        <option>
-                                            Select Category
-                                        </option>
-                                        <option value="general" value="cash" >Cash</option>
-                                        <option value="general" value="cheque">Cheque</option>
-                                    </select>
-                            </div>
-                    </div>
-
-                    <div class="rowWrapCard" *ngIf="isCheque">
-                            <div class="labelWrap">
-                               Cheque Number :
-                            </div>
-                            <div class="inputWrap">
-                                <input type="text" name="amountPayable" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="buttonWrap">
-                                <div class="buttonWrapMemory">
-                                    <button class="btn btn-primary">Collect</button>
-                                </div>
-                            </div>
-                </div>
-            </div>
+         
         </div>
     </div>
 </div>

@@ -1,3 +1,5 @@
+import { DataService } from './../../data.service';
+import { Batch } from './../../model/FeePattern';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CurrentbatchComponent implements OnInit {
 
-  constructor() { }
+  public feePattern = {} as Batch;
+  constructor(private apiService : DataService) { }
 
   ngOnInit() {
   }
-
+  
+  onAdd() {
+    console.log(this.feePattern);
+    this.apiService.createBatch(this.feePattern).subscribe(data => {
+      console.log(data);
+    },
+      error => {
+        alert(error.error.text);
+      });
+  }
 }
