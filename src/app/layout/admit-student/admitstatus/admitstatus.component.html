@@ -21,7 +21,9 @@
                                 <option>
                                     Select Batch
                                 </option>
-                                <option value="General">10_2020-2021</option>
+                                <option *ngFor="let i of batchesList.batch">
+                                    {{i}}
+                                 </option>   
                             </select>
                         </div>
                     </div>
@@ -36,7 +38,9 @@
                             <option>
                                 Select Category
                             </option>
-                            <option value="General">10_2020-2021_GENERAL</option>
+                            <option *ngFor="let i of feePatternList.FeeName">
+                                {{i}}
+                             </option>   
                         </select>
                     </div>
                 </div>

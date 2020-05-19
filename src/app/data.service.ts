@@ -1,4 +1,4 @@
-import { FeePattern, FeePatternHead, Batch } from './model/FeePattern';
+import { FeePattern, FeePatternHead, Batch, ListFeePattern, ListBatches } from './model/FeePattern';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -29,5 +29,11 @@ export class DataService {
   }
   createBatch(feePattern: Batch) {
     return this.httpClient.post(this.baseUrl + '/academics/batch', feePattern, { headers: this.httpHeaders });
+  }
+  getAllFeePatterns() {
+    return this.httpClient.get<ListFeePattern>(this.baseUrl + '/feepattern/getfee',{ headers: this.httpHeaders });
+  }
+  getAllBatches() {
+    return this.httpClient.get<ListBatches>(this.baseUrl + '/academics/getbatch',{ headers: this.httpHeaders });
   }
 }

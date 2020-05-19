@@ -3,7 +3,12 @@ export class FeePattern {
     fee_pattern_type:string;
     fee_pattern_batch:string;
 }
-
+export class ListFeePattern {
+FeeName : String[];
+}
+export class ListBatches {
+    batch : String[];
+    }
 
 export class FeePatternHead {
     fee_pattern_name: string;
