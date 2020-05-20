@@ -19,6 +19,7 @@ export class CurrentbatchComponent implements OnInit {
     console.log(this.feePattern);
     this.apiService.createBatch(this.feePattern).subscribe(data => {
       console.log(data);
+      alert("done");
     },
       error => {
         alert(error.error.text);

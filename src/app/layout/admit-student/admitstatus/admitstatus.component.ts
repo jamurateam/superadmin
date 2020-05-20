@@ -43,4 +43,7 @@ export class AdmitstatusComponent implements OnInit {
       });
   }
 
+  saveBatch() {
+    console.log("vatch");
+  }
 }

@@ -19,6 +19,7 @@ export class FeeHeadsComponent implements OnInit {
     console.log(this.feePatternHead);
     this.apiService.createFeePatternHead(this.feePatternHead).subscribe(data => {
       console.log(data);
+      alert("done");
     },
       error => {
         alert(error.error.text);
