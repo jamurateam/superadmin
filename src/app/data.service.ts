@@ -8,7 +8,7 @@ import { Student } from './model/Student';
   providedIn: 'root'
 })
 export class DataService {
-  baseUrl: string = "http://127.0.0.1:8000";
+  baseUrl: string = "https://vuni.herokuapp.com";
   httpHeaders = new HttpHeaders({ 'Content-type': 'application/json' })
   constructor(private httpClient: HttpClient) { }
 

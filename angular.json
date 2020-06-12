@@ -121,6 +121,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "vuni"
+    }
+  },
+  "defaultProject": "vuni",
+  "cli": {
+    "analytics": false
+  }
 }

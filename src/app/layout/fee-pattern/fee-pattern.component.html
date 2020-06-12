@@ -1,49 +1,80 @@
 <div class="mainWrap">
-        <div class="container">
-            <div class="mainDiv">
-    
+    <div class="container">
+        <div class="mainDiv">
+            <form #addFeePattern="ngForm" (ngSubmit)="onAdd()">
                 <div class="rowWrap">
                     <div class="labelWrap">
                         Class :
+                        <span style="color: red">*</span>
                     </div>
                     <div class="inputWrap">
-                        <input type="text" name="fee_pattern_class_name" #fee_pattern_class_name="ngModel" [(ngModel)]="feePattern.fee_pattern_class_name" class="form-control">
+                        <input type="text" name="fee_pattern_class_name" #fee_pattern_class_name="ngModel" required
+                            [(ngModel)]="feePattern.fee_pattern_class_name" class="form-control">
+                        <div *ngIf="fee_pattern_class_name.touched && fee_pattern_class_name.invalid">
+                            <div class="validation" *ngIf="fee_pattern_class_name.errors['required']">
+                                Please enter fee_pattern_class_name
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="rowWrap">
-                        <div class="labelWrap">
-                            Batch :
-                        </div>
-                        <div class="inputWrap">
-                            <input type="text"  name="fee_pattern_batch" #fee_pattern_batch="ngModel" [(ngModel)]="feePattern.fee_pattern_batch" class="form-control">
+                    <div class="labelWrap">
+                        Batch :
+                        <span style="color: red">*</span>
+                    </div>
+                    <div class="inputWrap">
+                        <input type="text" name="fee_pattern_batch" #fee_pattern_batch="ngModel" required
+                            [(ngModel)]="feePattern.fee_pattern_batch" class="form-control">
+                        <div *ngIf="fee_pattern_batch.touched && fee_pattern_batch.invalid">
+                            <div class="validation" *ngIf="fee_pattern_batch.errors['required']">
+                                Please enter fee_pattern_batch
+                            </div>
+
                         </div>
                     </div>
-    
-                <div class="rowWrap">
-                        <div class="labelWrap">
-                           Type :
-                        </div>
-                        <div class="InformationSelectGetWrap">
-                            <select class="browser-default custom-select" 
-                            name="fee_pattern_type" [(ngModel)]="feePattern.fee_pattern_type">
-                                <option>
-                                    Select Category
-                                </option>
-                                <option value="General">General</option>
-                                <option value="SC">SC</option>
-                            </select>
-                        </div>
                 </div>
 
 
-            <div class="buttonWrap">
-                <div class="buttonWrapMemory">
-                <button class="btn btn-primary" (click)="onAdd()">Add</button>
-            </div>
-            </div>
+                <div class="rowWrap">
+                    <div class="labelWrap">
+                        Type :
+                        <span style="color: red">*</span>
+                    </div>
+                    <div class="InformationSelectGetWrap">
+                        <select class="browser-default custom-select" name="fee_pattern_type" required
+                            [(ngModel)]="feePattern.fee_pattern_type">
+                            <option>
+                                Select Category
+                            </option>
+                            <option value="General">General</option>
+                            <option value="SC">SC</option>
+                        </select>
+                        <!--<div *ngIf="fee_pattern_type.touched && fee_pattern_type.invalid">
+                                <div class="validation" *ngIf="fee_pattern_type.errors['required']">
+                                  Please enter fee_pattern_type
+                                </div>
+                            </div>-->
 
-             
-            </div>
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+
+
+                <div class="buttonWrap">
+                    <div class="buttonWrapMemory">
+                        <button class="btn btn-primary"[disabled]="!addFeePattern.form.valid">Add</button>
+                    </div>
+                </div>
+
+            </form>
         </div>
     </div>
+</div>

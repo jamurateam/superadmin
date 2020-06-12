@@ -1,57 +1,84 @@
 <div class="mainWrap">
     <div class="container">
-        <div class="mainDiv">
+        
+            <div class="mainDiv">
+                <form #addAdminStudent="ngForm" (ngSubmit)="onAdd()">
 
-            <div class="rowWrap">
-                <div class="labelWrap">
-                    Application Number :
-                </div>
-                <div class="inputWrap">                    
-                    <input type="text" name="id" #id="ngModel" class="form-control"
-                    [(ngModel)]="studentData.id" >
-                </div>
-            </div>
+                <div class="rowWrap">
+                    <div class="labelWrap">
+                        Application Number :
+                        <span style="color: red">*</span>
+                    </div>
+                    <div class="inputWrap">
+                        <input type="text" name="id" #id="ngModel" class="form-control" required
+                            [(ngModel)]="studentData.id">
+                        <div *ngIf="id.touched && id.invalid">
+                            <div class="validation" *ngIf="id.errors['required']">
+                                Please enter id
+                            </div>
 
-            <div class="rowWrap">
-                <div class="labelWrap">
-                   Name :
+                        </div>
+                    </div>
                 </div>
-                <div class="inputWrap">
-                        <input type="text" name="student_name" #student_name="ngModel" class="form-control"
-                        [(ngModel)]="studentData.student_name" >
-                </div>
-            </div>
 
-            <div class="buttonWrap">
-                <div class="buttonWrapMemory">
-                <button class="btn btn-primary" (click)="onSearch()">Search</button>
-            </div>
-            </div>
-        </div>
-    </div> 
+                <div class="rowWrap">
+                    <div class="labelWrap">
+                        Name :
+                        <span style="color: red">*</span>
+                    </div>
+                    <div class="inputWrap">
+                        <input type="text" name="student_name" #student_name="ngModel" class="form-control" required
+                            [(ngModel)]="studentData.student_name">
+                        <div *ngIf="student_name.touched && student_name.invalid">
+                            <div class="validation" *ngIf="student_name.errors['required']">
+                                Please enter student_name
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="buttonWrap">
+                    <div class="buttonWrapMemory">
+                        <button class="btn btn-primary" [disabled]="!addAdminStudent.form.valid">Search</button>
+                    </div>
+                </div>
+                </form>
+                </div>
+
+
+        
+
+
+
+    </div>
+
+
 
     <div class="tableWrap">
         <div class="table-responsive">
-        <table class="table table-hover table-bordered">
-            <tr>
-                <th style="width: 125px">Admission No.</th>
-                <th style="width: 125px">Name</th>
-                <th style="width: 125px">Father Name</th>
-                <th style="width: 125px">Class</th>
-                <th style="width: 125px">Contact Number</th>
-                <th style="width: 125px">Status</th>
-            </tr>
-            <tr *ngFor="let item of studentData">
-                <td>{{item.id}}</td>
-                <td>{{item.student_father}}</td>
-                <td>{{item.student_name}}</td>
-                <td>{{item.student_course}}</td>
-                <td>{{item.student_ph}}</td>
-                <td>
-                    <button class="btn btn-primary" routerLink="admit">Admit</button>
-                </td>
-            </tr>
-        </table>
+            <table class="table table-hover table-bordered">
+                <tr>
+                    <th style="width: 125px">Admission No.</th>
+                    <th style="width: 125px">Name</th>
+                    <th style="width: 125px">Father Name</th>
+                    <th style="width: 125px">Class</th>
+                    <th style="width: 125px">Contact Number</th>
+                    <th style="width: 125px">Status</th>
+                </tr>
+                <tr *ngFor="let item of studentData">
+                    <td>{{item.id}}</td>
+                    <td>{{item.student_father}}</td>
+                    <td>{{item.student_name}}</td>
+                    <td>{{item.student_course}}</td>
+                    <td>{{item.student_ph}}</td>
+                    <td>
+                        <button class="btn btn-primary" routerLink="admit">Admit</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
-    </div>
+
 </div>
