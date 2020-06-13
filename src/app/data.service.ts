@@ -1,4 +1,4 @@
-import { FeePattern, FeePatternHead, Batch, ListFeePattern, ListBatches } from './model/FeePattern';
+import { FeePattern, FeePatternHead, Batch, ListFeePattern, ListBatches, PaymentPending } from './model/FeePattern';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -35,5 +35,18 @@ export class DataService {
   }
   getAllBatches() {
     return this.httpClient.get<ListBatches>(this.baseUrl + '/academics/getbatch',{ headers: this.httpHeaders });
+  }
+
+  getPendingPayment(id: number): Observable<any> {
+    return this.httpClient.get<PaymentPending>(this.baseUrl + '/feepattern/studentsFeeDetails?id=' + id, { headers: this.httpHeaders })
+  }
+
+  depositFee(fee: PaymentPending) {
+    return this.httpClient.post(this.baseUrl + '/feepattern/feepay', fee, { headers: this.httpHeaders });
+  }
+
+
+  AdmitStudent(admitStudent: Student , id: string) {
+    return this.httpClient.put(this.baseUrl + '/studentregister/put/' + id  + '/', admitStudent, { headers: this.httpHeaders });
   }
 }

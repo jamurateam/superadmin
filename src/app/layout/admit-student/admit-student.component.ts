@@ -18,8 +18,11 @@ public studentData = {} as Student;
 
   onSearch() {
     if (this.studentData.id) {
+      sessionStorage.setItem('id', JSON.stringify(this.studentData.id));
       this.apiService.getStudentDetailById(this.studentData.id).subscribe(data => {
         console.log(data);
+        
+        console.log(sessionStorage.getItem('id'));
         this.studentData = data;
       },
         error => {

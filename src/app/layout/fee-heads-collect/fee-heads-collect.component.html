@@ -7,18 +7,18 @@
                     Application Number :
                 </div>
                 <div class="inputWrap">
-                    <input type="text" name="ApplicationNumber" class="form-control">
+                    <input type="text" name="id" id="ngModel" [(ngModel)]="payment.id" class="form-control">
                 </div>
             </div>
 
             <div class="buttonWrap">
                 <div class="buttonWrapMemory">
-                    <button class="btn btn-primary">Search</button>
+                    <button class="btn btn-primary" (click)="onSearch()">Search</button>
                 </div>
             </div>
         </div>
 
-        <div class="forCardWrap">
+        <div class="forCardWrap" *ngIf="isPaymentSearched">
             <div class="card">
                 <div class="testHeadWrap">
                     <div class="rowWrapCard">
@@ -26,7 +26,7 @@
                             Amount Payable :
                         </div>
                         <div class="inputWrap">
-                            <input type="text" name="amountPayable" class="form-control">
+                            <input type="text" name="amount" #amount="ngModel" [(ngModel)]="payment.amount" class="form-control">
                         </div>
                     </div>
 
@@ -36,12 +36,12 @@
                             </div>
                             <div class="inputWrap">
                                     <select class="browser-default custom-select"
-                                    name="category" (change)="paymentMethod($event.target.value)">
-                                        <option>
+                                    name="payment_mode" #payment_mode="ngModel"  [(ngModel)]="payment.payment_mode" (change)="paymentMethod($event.target.value)">
+                                        <option >
                                             Select Category
                                         </option>
-                                        <option value="general" value="cash" >Cash</option>
-                                        <option value="general" value="cheque">Cheque</option>
+                                        <option  value="CASH" >Cash</option>
+                                        <option value="CHEQUE">Cheque</option>
                                     </select>
                             </div>
                     </div>
@@ -51,13 +51,13 @@
                                Cheque Number :
                             </div>
                             <div class="inputWrap">
-                                <input type="text" name="amountPayable" class="form-control">
+                                <input type="text" name="cheque_no" #cheque_no="ngModel" [(ngModel)]="payment.cheque_no" class="form-control">
                             </div>
                         </div>
 
                         <div class="buttonWrap">
                                 <div class="buttonWrapMemory">
-                                    <button class="btn btn-primary">Collect</button>
+                                    <button class="btn btn-primary" (click)="onPayment()">Collect</button>
                                 </div>
                             </div>
                 </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/data.service';
+import { PaymentPending } from 'src/app/model/FeePattern';
 
 @Component({
   selector: 'app-fee-heads-collect',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeeHeadsCollectComponent implements OnInit {
   isCheque: boolean;
-  constructor() { }
+  public payment = {} as PaymentPending;
+  isPaymentSearched: boolean;
+  constructor(private apiService : DataService) { }
+
 
   ngOnInit() {
   }
@@ -22,6 +27,25 @@ export class FeeHeadsCollectComponent implements OnInit {
        this.isCheque = true;
         break;
     }
+  }
+  onSearch() {
+    this.apiService.getPendingPayment(this.payment.id).subscribe(data => {
+      this.payment.amount = data.amount;
+      this.isPaymentSearched = true;
+    },
+      error => {
+        alert(error.error.text);
+      });
+  }
+
+  onPayment() {
+   console.log(this.payment);
+    this.apiService.depositFee(this.payment).subscribe(data => {
+    console.log(data);
+    },
+      error => {
+        alert(error.error.text);
+      });
   }
 
 }

@@ -25,3 +25,21 @@ export class Batch {
     end_date:string;
     intake:string;
 }
+
+
+export class PaymentPending {
+    id: number;
+    amount: number;
+    monthly_data: MonthlyData[];
+    payment_mode:string;
+    cheque_no:number;
+}
+
+export class MonthlyData {
+    start: string;
+    end: string;
+    status: string;
+    feePending: number;
+    feePaid: number;
+    trnc: string;
+}
