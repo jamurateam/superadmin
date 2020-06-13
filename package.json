@@ -49,17 +49,5 @@
   "engines": {
     "node": "12.6.0",
     "npm": "6.9.0"
-  },
-  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.1.",
-  "main": "karma.conf.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ankushbansal2000/vuniFront.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ankushbansal2000/vuniFront/issues"
-  },
-  "homepage": "https://github.com/ankushbansal2000/vuniFront#readme"
+  }
 }
