@@ -12,11 +12,12 @@ export class DataService {
   httpHeaders = new HttpHeaders({ 'Content-type': 'application/json' })
   constructor(private httpClient: HttpClient) { }
 
+
   get_products() {
     return this.httpClient.get<Student[]>(this.baseUrl);
   }
   createUser(employee: Student) {
-    return this.httpClient.post(this.baseUrl + '/studentregister/reg', employee, { headers: this.httpHeaders });
+    return this.httpClient.post(this.baseUrl + '/studentregister/reg', employee, { headers: this.httpHeaders});
   }
   getStudentDetailById(id): Observable<any> {
     return this.httpClient.get<Student[]>(this.baseUrl + '/studentregister/?search=' + id, { headers: this.httpHeaders })
@@ -44,9 +45,15 @@ export class DataService {
   depositFee(fee: PaymentPending) {
     return this.httpClient.post(this.baseUrl + '/feepattern/feepay', fee, { headers: this.httpHeaders });
   }
-
-
   AdmitStudent(admitStudent: Student , id: string) {
-    return this.httpClient.put(this.baseUrl + '/studentregister/put/' + id  + '/', admitStudent, { headers: this.httpHeaders });
+    return this.httpClient.post(this.baseUrl + '/studentregister/put/' + id  + '/', admitStudent, { headers: this.httpHeaders });
   }
+
+
+
+
+  reciptFeePost(fee: PaymentPending) {
+    return this.httpClient.post(this.baseUrl + '/feeRecipt/fee', fee, { headers: this.httpHeaders });
+  }
+
 }

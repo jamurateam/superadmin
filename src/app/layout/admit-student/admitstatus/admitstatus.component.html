@@ -28,23 +28,6 @@
                         </div>
                     </div>
 
-            <div class="rowWrap">
-                    <div class="labelWrap">
-                       Fee Pattern :
-                    </div>
-                    <div class="InformationSelectGetWrap">
-                        <select class="browser-default custom-select" 
-                        name="nationality" [(ngModel)]="admitDetails.student_fee_pattern">
-                            <option>
-                                Select Category
-                            </option>
-                            <option *ngFor="let i of feePatternList.FeeName">
-                                {{i}}
-                             </option>   
-                        </select>
-                    </div>
-                </div>
-
             <div class="buttonWrap">
                 <div class="buttonWrapMemory">
                 <button class="btn btn-primary" (click)="saveBatch()">Save</button>

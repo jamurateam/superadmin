@@ -14,8 +14,10 @@ export class FeePatternComponent implements OnInit {
 
   ngOnInit() {
   }
+
+
+
   onAdd() {
-    console.log(this.feePattern);
     this.apiService.createFeePattern(this.feePattern).subscribe(data => {
       console.log(data);
       alert("done");

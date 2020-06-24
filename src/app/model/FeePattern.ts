@@ -8,7 +8,7 @@ FeeName : String[];
 }
 export class ListBatches {
     batch : String[];
-    }
+}
 
 export class FeePatternHead {
     fee_pattern_name: string;
@@ -25,7 +25,6 @@ export class Batch {
     end_date:string;
     intake:string;
 }
-
 
 export class PaymentPending {
     id: number;
