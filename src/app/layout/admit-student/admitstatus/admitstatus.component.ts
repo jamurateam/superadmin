@@ -52,7 +52,12 @@ export class AdmitstatusComponent implements OnInit {
   saveBatch() {
     this.apiService.AdmitStudent(this.admitDetails , this.id).subscribe(data => {
       console.log(data);
-      alert("student admited");
+      if(data.error != null) {
+          alert(data.error); 
+      } else {
+        alert("successfully register");
+      }
+   
     },
       error => {
         alert(error.error.text);

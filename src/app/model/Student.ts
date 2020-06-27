@@ -1,4 +1,6 @@
 export class Student {
+    error: string;
+    
     id: number;
     student_name: string;
     student_father: string;

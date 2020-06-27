@@ -8,17 +8,13 @@
                         <span style="color: red">*</span>
                     </div>
                     <div class="InformationSelectGetWrap">
-                        <select class="browser-default custom-select" name="nationality" name="fee_pattern_type"
+                        <select class="browser-default custom-select" name="fee_pattern_type"
                             required [(ngModel)]="feePatternHead.fee_pattern_name">
+                            <option>Select</option>
                             <option *ngFor="let i of feePatternList.FeeName">
                                 {{i}}
                             </option>
                         </select>
-                        <!-- <div *ngIf="fee_pattern_class_name.touched && fee_pattern_class_name.invalid">
-                            <div class="validation" *ngIf="fee_pattern_class_name.errors['required']">
-                                Please enter fee_pattern_class_name
-                            </div>
-                        </div>-->
                     </div>
                 </div>
 
@@ -76,7 +72,7 @@
                         <span style="color: red">*</span>
                     </div>
                     <div class="InformationSelectGetWrap">
-                        <select class="browser-default custom-select" name="nationality" name="fee_collect_pattern"
+                        <select class="browser-default custom-select" name="fee_collect_pattern"
                             required [(ngModel)]="feePatternHead.fee_collect_pattern">
                             <option>
                                 Select

@@ -63,7 +63,7 @@
                         Start Date :
                     </div>
                     <div class="inputWrap">
-                        <input type="date" #start_date="ngModel" required [(ngModel)]="feePattern.start_date"
+                        <input type="date" #start_date="ngModel" name="start_date" required [(ngModel)]="feePattern.start_date"
                             class="form-control">
                         <div *ngIf="start_date.touched && start_date.invalid">
                             <div class="validation" *ngIf="start_date.errors['required']">
@@ -79,7 +79,7 @@
                         End Date :
                     </div>
                     <div class="inputWrap">
-                        <input type="date" #end_date="ngModel" required [(ngModel)]="feePattern.end_date"
+                        <input type="date" #end_date="ngModel"  name="end_date" required [(ngModel)]="feePattern.end_date"
                             class="form-control">
                         <div *ngIf="end_date.touched && end_date.invalid">
                             <div class="validation" *ngIf="end_date.errors['required']">
@@ -94,7 +94,7 @@
                         Intake :
                     </div>
                     <div class="inputWrap">
-                        <input type="text" #intake="ngModel" required [(ngModel)]="feePattern.intake"
+                        <input type="text" #intake="ngModel" name="intake" required [(ngModel)]="feePattern.intake"
                             class="form-control">
                         <div *ngIf="intake.touched && intake.invalid">
                             <div class="validation" *ngIf="intake.errors['required']">

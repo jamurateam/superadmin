@@ -15,9 +15,8 @@ public student = {} as Student;
   ngOnInit() {
   }
   onSubmit(data: Student) {
-    console.log(data);
     this.apiService.createUser(data).subscribe(data => {
-      alert('You Successfully registered.');
+      alert('You Successfully registered and your registration id is ' + data.id);
       console.log(data);
     },
       error => {

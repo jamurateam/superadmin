@@ -1,4 +1,4 @@
-import { FeePattern, FeePatternHead, Batch, ListFeePattern, ListBatches, PaymentPending } from './model/FeePattern';
+import { FeePattern, FeePatternHead, Batch, ListFeePattern, ListBatches, PaymentPending, PaymentsResponse } from './model/FeePattern';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -17,7 +17,7 @@ export class DataService {
     return this.httpClient.get<Student[]>(this.baseUrl);
   }
   createUser(employee: Student) {
-    return this.httpClient.post(this.baseUrl + '/studentregister/reg', employee, { headers: this.httpHeaders});
+    return this.httpClient.post<Student>(this.baseUrl + '/studentregister/reg', employee, { headers: this.httpHeaders});
   }
   getStudentDetailById(id): Observable<any> {
     return this.httpClient.get<Student[]>(this.baseUrl + '/studentregister/?search=' + id, { headers: this.httpHeaders })
@@ -43,10 +43,10 @@ export class DataService {
   }
 
   depositFee(fee: PaymentPending) {
-    return this.httpClient.post(this.baseUrl + '/feepattern/feepay', fee, { headers: this.httpHeaders });
+    return this.httpClient.post<PaymentsResponse>(this.baseUrl + '/feepattern/feepay', fee, { headers: this.httpHeaders });
   }
   AdmitStudent(admitStudent: Student , id: string) {
-    return this.httpClient.post(this.baseUrl + '/studentregister/put/' + id  + '/', admitStudent, { headers: this.httpHeaders });
+    return this.httpClient.post<Student>(this.baseUrl + '/studentregister/put?id=' + id , admitStudent, { headers: this.httpHeaders });
   }
 
 

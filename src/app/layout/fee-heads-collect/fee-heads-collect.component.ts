@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/data.service';
-import { PaymentPending } from 'src/app/model/FeePattern';
+import { PaymentPending, PaymentsResponse } from 'src/app/model/FeePattern';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-fee-heads-collect',
@@ -10,11 +11,16 @@ import { PaymentPending } from 'src/app/model/FeePattern';
 export class FeeHeadsCollectComponent implements OnInit {
   isCheque: boolean;
   public payment = {} as PaymentPending;
+  public reciptDetails = {} as  PaymentsResponse;
   isPaymentSearched: boolean;
-  constructor(private apiService : DataService) { }
+  isReciept: boolean;
+  constructor(private apiService : DataService, public router: Router) { }
 
 
   ngOnInit() {
+  }
+  func() {
+    this.isReciept = false;
   }
 
   paymentMethod(value) {
@@ -39,9 +45,10 @@ export class FeeHeadsCollectComponent implements OnInit {
   }
 
   onPayment() {
-   console.log(this.payment);
     this.apiService.depositFee(this.payment).subscribe(data => {
     console.log(data);
+    this.reciptDetails = data;
+    this.isReciept = true;
     },
       error => {
         alert(error.error.text);

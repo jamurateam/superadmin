@@ -1,0 +1,63 @@
+<div class="mainwrap">
+
+    <div class="cancelButtonWrap" (click)="cancelWrap()">
+<img src="../../../assets/cross.png">
+    </div>
+    <div class="mainsectionBox">
+        <form class="formWrap">
+            <div class="InstituteWrap">
+                SETH JAI PARKASH MUKAND LAL INSTITUTE OF ENGINEERING & TECHNOLOGY
+            </div>
+            <div class="ShortWrap"> (JMIT)</div>
+            <div class="TitleWrap"> Fee Receipt
+                <div class="formGroup">
+                    <div class="labelWrap"> Date : 
+                        <input type="text" [(ngModel)]="input.fee_recipt.date"  name="date" #date="ngModel" readonly>
+                    </div>
+                    <div class="labelWrap"> Time :
+                        <input type="text" [(ngModel)]="input.fee_recipt.time"  name="time" #time="ngModel" readonly>
+                    </div>
+                </div>
+                
+                    <div class="formGroup">
+                        <div class="detailsWrap"> Student Details
+                            <div class="detailWrap"> Student Name :
+                                <input type="text" [(ngModel)]="input.fee_recipt.studentName" name="studentName" #studentName="ngModel" readonly>
+                            </div>
+                            <div class="detailWrap"> Parent's Name :
+                                <input type="text" [(ngModel)]="input.fee_recipt.father_name"  name="father_name" #father_name="ngModel" readonly>
+                            </div>
+                            <div class="detailWrap"> Registration Number :
+                                <input type="text" [(ngModel)]="input.fee_recipt.application_no"  name="application_no" #application_no="ngModel" readonly>
+                            </div>
+                           
+                        </div>
+                    </div>
+    
+                <div class="formGroup">
+                    <div class="detailsWrap"> Fee Details
+                       
+                        <div class="detailWrap"> Paid fee:
+                            <input type="text"  name="amount_paid" #amount_paid="ngModel"  [(ngModel)]="input.fee_recipt.amount_paid" readonly>
+                        </div>
+                        <div class="detailWrap"> Pending Fee till date:
+                            <input type="text"  name="studentName" value="0" readonly>
+                        </div>
+                      
+                  
+                    </div>
+                </div>
+
+
+                <div class="formGroup">
+                    <div class="detailsWrap">
+                      
+                         <div class="detailWrap" id="total">Total:
+                            <input type="text"  name="amount_paid" #amount_paid="ngModel"  [(ngModel)]="input.fee_recipt.amount_paid" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

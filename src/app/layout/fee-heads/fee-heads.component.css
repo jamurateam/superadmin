@@ -32,10 +32,9 @@
     float: left;
     width: 100%;
     color: gray;
-    border-radius: 3px;
     border: 1px solid #80808073;
     background-color: white;
-    padding: 8px;
+   height: 32px;
 }
 .buttonWrap {
     float: left;

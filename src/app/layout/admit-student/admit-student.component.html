@@ -50,15 +50,18 @@
 
     <div class="tableWrap">
         <div class="table-responsive">
-            <table class="table table-hover table-bordered">
+            <table class="table table-bordered">
+                <thead>
                 <tr>
-                    <th style="width: 125px">Admission No.</th>
-                    <th style="width: 125px">Name</th>
-                    <th style="width: 125px">Father Name</th>
-                    <th style="width: 125px">Class</th>
-                    <th style="width: 125px">Contact Number</th>
-                    <th style="width: 125px">Status</th>
+                    <th>Admission No.</th>
+                    <th>Name</th>
+                    <th>Father Name</th>
+                    <th>Class</th>
+                    <th>Contact Number</th>
+                    <th>Status</th>
                 </tr>
+            </thead>
+            <tbody>
                 <tr *ngFor="let item of studentData">
                     <td>{{item.id}}</td>
                     <td>{{item.student_father}}</td>
@@ -69,6 +72,7 @@
                         <button class="btn btn-primary" routerLink="admit">Admit</button>
                     </td>
                 </tr>
+            </tbody>
             </table>
         </div>
     </div>

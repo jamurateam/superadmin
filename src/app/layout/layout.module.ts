@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 
 import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
+import { RecieptComponent } from './reciept/reciept.component';
 
 
 @NgModule({

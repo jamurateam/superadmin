@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout.component';
+import { RecieptComponent } from './reciept/reciept.component';
 
 
 const routes: Routes = [ 
@@ -13,6 +14,7 @@ const routes: Routes = [
     { path: "feeHeadsCollect", loadChildren: "./fee-heads-collect/fee-heads-collect.module#FeeHeadsCollectModule" },
     { path: "feeDetails", loadChildren: "./fee-detail/fee-detail.module#FeeDetailModule" },
     { path: "feePatterns", loadChildren: "./fee-pattern/fee-pattern.module#FeePatternModule" },
+    { path: "reciept", component: RecieptComponent },
 ]
   }];
 @NgModule({
