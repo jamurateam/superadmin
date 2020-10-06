@@ -14,6 +14,7 @@ const routes: Routes = [
     { path: "feeHeadsCollect", loadChildren: "./fee-heads-collect/fee-heads-collect.module#FeeHeadsCollectModule" },
     { path: "feeDetails", loadChildren: "./fee-detail/fee-detail.module#FeeDetailModule" },
     { path: "feePatterns", loadChildren: "./fee-pattern/fee-pattern.module#FeePatternModule" },
+    { path: "pdf", loadChildren: "./generate-pdf/generate-pdf.module#GeneratePdfModule" },
     { path: "reciept", component: RecieptComponent },
 ]
   }];

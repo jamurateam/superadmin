@@ -13,6 +13,19 @@ export class DataService {
   constructor(private httpClient: HttpClient) { }
 
 
+
+  /* For Sign Up  */
+
+  forSignUp() {
+
+  }
+
+  /* For Log In */
+
+  forLogIn() {
+
+  }
+
   get_products() {
     return this.httpClient.get<Student[]>(this.baseUrl);
   }
@@ -54,6 +67,10 @@ export class DataService {
 
   reciptFeePost(fee: PaymentPending) {
     return this.httpClient.post(this.baseUrl + '/feeRecipt/fee', fee, { headers: this.httpHeaders });
+  }
+
+  GeneratePdf(batch) {
+    return this.httpClient.get(this.baseUrl + '/academics/excelByBatch?batch=' + batch, { headers: this.httpHeaders , responseType: 'blob'})
   }
 
 }

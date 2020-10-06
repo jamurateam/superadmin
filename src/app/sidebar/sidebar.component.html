@@ -28,5 +28,9 @@
                 <a [routerLink]="[ '/feePatterns'] "  (click)="actElement('feePattern')" [ngClass]="'feePattern' === activeElement ? 'active' : 'none'">
                     <i class="fa fa-user-o fa-lg"></i>Fee Pattern</a>
         </li>
+        <li >
+            <a [routerLink]="[ '/pdf'] "  (click)="actElement('pdf')" [ngClass]="'pdf' === activeElement ? 'active' : 'none'">
+                <i class="fa fa-user-o fa-lg"></i>Generate PDF</a>
+    </li>
     </ul>
 </div>
