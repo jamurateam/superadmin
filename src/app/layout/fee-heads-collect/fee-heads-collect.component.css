@@ -25,9 +25,9 @@
   }
   .inputWrap select {
     float: left;
-    padding: 7px;
+    height: 32px;
     border: 1px solid #8080806e;
-    border-radius: 4px;
+   
     background-color: white;
     width: 99%; 
   }

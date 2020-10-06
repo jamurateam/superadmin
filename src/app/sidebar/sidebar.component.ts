@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
   isAdmission: boolean;
+  activeElement: string;
   constructor() { }
 
   ngOnInit() {
@@ -18,5 +19,9 @@ export class SidebarComponent implements OnInit {
       this.isAdmission = false;
     }
 
+  }
+
+  actElement(name: string){
+this.activeElement = name;
   }
 }

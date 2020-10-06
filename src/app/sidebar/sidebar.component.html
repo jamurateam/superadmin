@@ -17,15 +17,15 @@
             </ul>
         </div>
         <li >
-            <a [routerLink]="[ '/feeHeads'] ">
+            <a [routerLink]="[ '/feeHeads'] " (click)="actElement('feeHead')"  [ngClass]="'feeHead' === activeElement ? 'active' : 'none'">
                 <i class="fa fa-user-o fa-lg"></i>Fee Heads</a>
         </li>
         <li >
-            <a [routerLink]="[ '/feeHeadsCollect'] ">
+            <a [routerLink]="[ '/feeHeadsCollect'] " (click)="actElement('feeHeadCollect')" [ngClass]="'feeHeadCollect' === activeElement ? 'active' : 'none'">
                 <i class="fa fa-user-o fa-lg"></i>Fee Heads Collect</a>
         </li>
         <li >
-                <a [routerLink]="[ '/feePatterns'] ">
+                <a [routerLink]="[ '/feePatterns'] "  (click)="actElement('feePattern')" [ngClass]="'feePattern' === activeElement ? 'active' : 'none'">
                     <i class="fa fa-user-o fa-lg"></i>Fee Pattern</a>
         </li>
     </ul>
