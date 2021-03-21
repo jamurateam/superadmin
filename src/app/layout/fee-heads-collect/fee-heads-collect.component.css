@@ -8,7 +8,7 @@
       width: 100%;
   }
   .rowWrap {
-      float: left;
+      margin: 20px 0;
       width: 50%;
       padding: 15px;
   }
@@ -27,14 +27,14 @@
     float: left;
     height: 32px;
     border: 1px solid #8080806e;
-   
+
     background-color: white;
-    width: 99%; 
+    width: 99%;
   }
   .buttonWrap {
       float: left;
       width: 100%;
-      padding-top: 10px; 
+      padding-top: 10px;
   }
   .buttonWrapMemory {
       width: 15%;
@@ -46,7 +46,7 @@
   }
   .forCardWrap{
     float: left;
-    width: 100%;  
+    width: 100%;
     padding: 1%;
   }
   .testHeadWrap {

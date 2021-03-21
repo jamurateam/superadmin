@@ -1,5 +1,5 @@
 import { DataService } from './../../data.service';
-import { FeePatternHead, ListFeePattern } from './../../model/FeePattern';
+import { CompanyDetails } from './../../model/FeePattern';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,16 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./fee-heads.component.css']
 })
 export class FeeHeadsComponent implements OnInit {
-  public feePatternHead = {} as FeePatternHead;
-  public feePatternList = {} as ListFeePattern;
+  public companyDetails = {} as CompanyDetails;
+
   constructor(private apiService : DataService) { }
 
   ngOnInit() {
-    this.getAllFeePatterns();
   }
+
   onAdd() {
-    console.log(this.feePatternHead);
-    this.apiService.createFeePatternHead(this.feePatternHead).subscribe(data => {
+    console.log(this.companyDetails);
+    this.apiService.createCompany(this.companyDetails).subscribe(data => {
       console.log(data);
       alert("done");
     },
@@ -25,16 +25,7 @@ export class FeeHeadsComponent implements OnInit {
         alert(error.error.text);
       });
   }
-  getAllFeePatterns() {
-    this.apiService.getAllFeePatterns().subscribe(data => {
-      console.log(data);
-      this.feePatternList = data;
-      console.log(this.feePatternList);
-    },
-      error => {
-        alert(error.error.text);
-      });
-  }
 
-  
+
+
 }

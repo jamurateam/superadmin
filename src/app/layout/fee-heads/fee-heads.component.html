@@ -2,33 +2,19 @@
     <div class="container">
         <div class="mainDiv">
             <form #addFeePattern="ngForm" (ngSubmit)="onAdd()">
-                <div class="rowWrap">
-                    <div class="labelWrap">
-                        Fee Pattern Name :
-                        <span style="color: red">*</span>
-                    </div>
-                    <div class="InformationSelectGetWrap">
-                        <select class="browser-default custom-select" name="fee_pattern_type"
-                            required [(ngModel)]="feePatternHead.fee_pattern_name">
-                            <option>Select</option>
-                            <option *ngFor="let i of feePatternList.FeeName">
-                                {{i}}
-                            </option>
-                        </select>
-                    </div>
-                </div>
+
 
                 <div class="rowWrap">
                     <div class="labelWrap">
-                        Total Tution Fee:
+                        Merchant Name:
                         <span style="color: red">*</span>
                     </div>
                     <div class="inputWrap">
-                        <input type="text" name="total_tution_fee" #total_tution_fee="ngModel" required
-                            [(ngModel)]="feePatternHead.total_tution_fee" class="form-control">
-                        <div *ngIf="total_tution_fee.touched && total_tution_fee.invalid">
-                            <div class="validation" *ngIf="total_tution_fee.errors['required']">
-                                Please enter total_tution_fee
+                        <input type="text" name="total_tution_fee" #companyName="ngModel" required
+                            [(ngModel)]="companyDetails.companyName" class="form-control">
+                        <div *ngIf="companyName.touched && companyName.invalid">
+                            <div class="validation" *ngIf="companyName.errors['required']">
+                                Please enter company name
                             </div>
                         </div>
                     </div>
@@ -36,58 +22,19 @@
 
                 <div class="rowWrap">
                     <div class="labelWrap">
-                        Total Academic Fee:
+                        Merchant IP:
                         <span style="color: red">*</span>
                     </div>
                     <div class="inputWrap">
-                        <input type="text" name="total_academic_fee" #total_academic_fee="ngModel" required
-                            [(ngModel)]="feePatternHead.total_academic_fee" class="form-control">
-                        <div *ngIf="total_academic_fee.touched && total_academic_fee.invalid">
-                            <div class="validation" *ngIf="total_academic_fee.errors['required']">
-                                Please enter total_academic_fee
+                        <input type="text" name="total_academic_fee" #companyIP="ngModel" required
+                            [(ngModel)]="companyDetails.companyIP" class="form-control">
+                        <div *ngIf="companyIP.touched && companyIP.invalid">
+                            <div class="validation" *ngIf="companyIP.errors['required']">
+                                Please enter company IP
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="rowWrap">
-                    <div class="labelWrap">
-                        Total Hostel Fee:
-                        <span style="color: red">*</span>
-                    </div>
-                    <div class="inputWrap">
-                        <input type="text" name="total_hostel_fee" #total_hostel_fee="ngModel" required
-                            [(ngModel)]="feePatternHead.total_hostel_fee" class="form-control">
-                        <div *ngIf="total_hostel_fee.touched && total_hostel_fee.invalid">
-                            <div class="validation" *ngIf="total_hostel_fee.errors['required']">
-                                Please enter total_hostel_fee
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="rowWrap">
-                    <div class="labelWrap">
-                        Fee Collect Pattern :
-                        <span style="color: red">*</span>
-                    </div>
-                    <div class="InformationSelectGetWrap">
-                        <select class="browser-default custom-select" name="fee_collect_pattern"
-                            required [(ngModel)]="feePatternHead.fee_collect_pattern">
-                            <option>
-                                Select
-                            </option>
-                            <option value="1">1 month</option>
-                            <option value="6">6 months</option>
-                            <option value="12">1 year</option>
-                        </select>
-                        <!--<div *ngIf="fee_collect_pattern.touched && fee_collect_pattern.invalid">
-                        <div class="validation" *ngIf="fee_collect_pattern.errors['required']">
-                            Please enter fee_collect_pattern
-                        </div>-->
-                    </div>
-                </div>
-
 
 
 

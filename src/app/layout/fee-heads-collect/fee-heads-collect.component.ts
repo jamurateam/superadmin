@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/data.service';
-import { PaymentPending, PaymentsResponse } from 'src/app/model/FeePattern';
+
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
 })
 export class FeeHeadsCollectComponent implements OnInit {
   isCheque: boolean;
-  public payment = {} as PaymentPending;
-  public reciptDetails = {} as  PaymentsResponse;
+  // public payment = {} as PaymentPending;
+  // public reciptDetails = {} as  PaymentsResponse;
   isPaymentSearched: boolean;
   isReciept: boolean;
   constructor(private apiService : DataService, public router: Router) { }
@@ -35,24 +35,24 @@ export class FeeHeadsCollectComponent implements OnInit {
     }
   }
   onSearch() {
-    this.apiService.getPendingPayment(this.payment.id).subscribe(data => {
-      this.payment.amount = data.amount;
-      this.isPaymentSearched = true;
-    },
-      error => {
-        alert(error.error.text);
-      });
+    // this.apiService.getPendingPayment(this.payment.id).subscribe(data => {
+    //   this.payment.amount = data.amount;
+    //   this.isPaymentSearched = true;
+    // },
+    //   error => {
+    //     alert(error.error.text);
+    //   });
   }
 
-  onPayment() {
-    this.apiService.depositFee(this.payment).subscribe(data => {
-    console.log(data);
-    this.reciptDetails = data;
-    this.isReciept = true;
-    },
-      error => {
-        alert(error.error.text);
-      });
-  }
+  // onPayment() {
+  //   this.apiService.depositFee(this.payment).subscribe(data => {
+  //   console.log(data);
+  //   this.reciptDetails = data;
+  //   this.isReciept = true;
+  //   },
+  //     error => {
+  //       alert(error.error.text);
+  //     });
+  // }
 
 }

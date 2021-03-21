@@ -1,6 +1,6 @@
 <div class="sidebarwrap">
     <ul class="listwrap">
-        <li (click)="permissionAdmin()"> 
+        <!-- <li (click)="permissionAdmin()">
             <a>
                 <i class="fa fa-plus" aria-hidden="false"></i>Admission </a>
         </li>
@@ -15,22 +15,35 @@
                         <i class="fa fa-user-o fa-lg"></i>Create Batch</a>
                 </li>
             </ul>
-        </div>
+        </div> -->
         <li >
-            <a [routerLink]="[ '/feeHeads'] " (click)="actElement('feeHead')"  [ngClass]="'feeHead' === activeElement ? 'active' : 'none'">
-                <i class="fa fa-user-o fa-lg"></i>Fee Heads</a>
+            <a [routerLink]="[ '/createCompany'] " (click)="actElement('createCompany')"
+            [ngClass]="'createCompany' === activeElement ? 'active' : 'none'">
+                <i class="fa fa-user-o fa-lg"></i>
+                Merchant
+            </a>
         </li>
+
         <li >
-            <a [routerLink]="[ '/feeHeadsCollect'] " (click)="actElement('feeHeadCollect')" [ngClass]="'feeHeadCollect' === activeElement ? 'active' : 'none'">
-                <i class="fa fa-user-o fa-lg"></i>Fee Heads Collect</a>
-        </li>
+          <a [routerLink]="[ '/createComponents'] " (click)="actElement('createComponents')"
+           [ngClass]="'createComponents' === activeElement ? 'active' : 'none'">
+              <i class="fa fa-user-o fa-lg"></i>
+              Create Components
+          </a>
+
+
+      </li>
+
+
         <li >
-                <a [routerLink]="[ '/feePatterns'] "  (click)="actElement('feePattern')" [ngClass]="'feePattern' === activeElement ? 'active' : 'none'">
-                    <i class="fa fa-user-o fa-lg"></i>Fee Pattern</a>
-        </li>
-        <li >
-            <a [routerLink]="[ '/pdf'] "  (click)="actElement('pdf')" [ngClass]="'pdf' === activeElement ? 'active' : 'none'">
-                <i class="fa fa-user-o fa-lg"></i>Generate PDF</a>
-    </li>
+          <a [routerLink]="[ '/assignComponent'] " (click)="actElement('assignComponent')"
+           [ngClass]="'assignComponent' === activeElement ? 'active' : 'none'">
+              <i class="fa fa-user-o fa-lg"></i>
+              Assign Components
+          </a>
+
+
+      </li>
+
     </ul>
 </div>

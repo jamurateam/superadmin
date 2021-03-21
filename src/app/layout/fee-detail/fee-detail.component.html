@@ -1,0 +1,50 @@
+<div class="mainWrap">
+  <div class="container">
+      <div class="mainDiv">
+          <form #addFeePattern="ngForm" (ngSubmit)="onAdd()">
+
+
+              <div class="rowWrap">
+                  <div class="labelWrap">
+                      Component Name :
+                      <span style="color: red">*</span>
+                  </div>
+                  <div class="inputWrap">
+                      <input type="text" name="name" #name="ngModel" required
+                          [(ngModel)]="componentDetail.name" class="form-control">
+                      <div *ngIf="name.touched && name.invalid">
+                          <div class="validation" *ngIf="name.errors['required']">
+                              Please enter name
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="rowWrap">
+                <div class="labelWrap">
+                    Component URL :
+                    <span style="color: red">*</span>
+                </div>
+                <div class="inputWrap">
+                    <input type="text" name="url" #url="ngModel" required
+                        [(ngModel)]="componentDetail.url" class="form-control">
+                    <div *ngIf="url.touched && url.invalid">
+                        <div class="validation" *ngIf="url.errors['required']">
+                            Please enter url
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+              <div class="buttonWrap">
+                  <div class="buttonWrapMemory">
+                      <button class="btn btn-primary" [disabled]="!addFeePattern.form.valid">Add</button>
+                  </div>
+              </div>
+          </form>
+
+      </div>
+  </div>
+</div>

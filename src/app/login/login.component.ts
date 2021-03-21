@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   onLogin() {
     console.log("call");
     sessionStorage.setItem('token', this.token);
-    this.router.navigate(["/admitStudent"]); 
+    this.router.navigate(["/createCompany"]);
   }
 
 }
